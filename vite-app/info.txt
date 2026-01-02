@@ -1,0 +1,4 @@
+nextjs vs. vite - Vite ist CSR; Browser → Lädt index.html → Lädt JavaScript → React rendert
+global vs. scoped - Ein Vite projekt hat global styles in index.css und scoped styles in app.css
+Root - "Root" ist ein container-Element in index.html, in dem durch React die gesamte App gerendert wird
+Mount Point – der Punkt im DOM, an dem React seine Komponenten einhängt.
