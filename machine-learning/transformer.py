@@ -11,7 +11,7 @@ class PositionalEncoding(nn.Module):
     """Positional Encoding für Sequenzen"""
     def __init__(self, d_model, max_len=100):
         super().__init__()
-        pe = torch.zeros(max_len, d_model)
+        pe = torch.zeros(max_len, d_model) #erstellt ein Tensor mit max_len Zeilen und d_model Spalten, initialisiert mit 0
         position = torch.arange(0, max_len).unsqueeze(1).float()
         div_term = torch.exp(torch.arange(0, d_model, 2).float() * 
                            -(math.log(10000.0) / d_model))
