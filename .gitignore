@@ -1,0 +1,20 @@
+# Python
+__pycache__/
+*.py[cod]
+*.pyd
+*.pyo
+*.egg-info/
+.venv/
+venv/
+.env/
+
+# Build artifacts
+/build/
+/dist/
+
+# Logs
+*.log
+
+# Local data
+invoices.xlsx
+invoices/

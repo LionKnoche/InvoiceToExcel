@@ -1,0 +1,125 @@
+{
+  "default_prompt": "",
+  "categories": [
+    {
+      "name": "Standard",
+      "sheet_name": "Rechnungen",
+      "columns": [
+        "InvoiceId",
+        "InvoiceNumber",
+        "VendorName",
+        "InvoiceDate",
+        "DueDate",
+        "GrossAmount",
+        "TaxRate",
+        "Currency",
+        "Description",
+        "FilePath"
+      ]
+    },
+    {
+      "name": "Kosten",
+      "sheet_name": "Kosten",
+      "columns": [
+        "InvoiceId",
+        "InvoiceNumber",
+        "VendorName",
+        "InvoiceDate",
+        "DueDate",
+        "GrossAmount",
+        "TaxRate",
+        "Currency",
+        "Description",
+        "FilePath"
+      ]
+    },
+    {
+      "name": "Einkauf",
+      "sheet_name": "Einkauf",
+      "columns": [
+        "InvoiceId",
+        "InvoiceNumber",
+        "VendorName",
+        "InvoiceDate",
+        "DueDate",
+        "GrossAmount",
+        "TaxRate",
+        "Currency",
+        "DeliveryNote",
+        "Description",
+        "FilePath"
+      ]
+    },
+    {
+      "name": "Reisekosten",
+      "sheet_name": "Reisekosten",
+      "columns": [
+        "InvoiceId",
+        "InvoiceNumber",
+        "VendorName",
+        "InvoiceDate",
+        "DueDate",
+        "GrossAmount",
+        "TaxRate",
+        "Currency",
+        "Description",
+        "FilePath"
+      ]
+    },
+    {
+      "name": "Logistik",
+      "sheet_name": "Logistik",
+      "columns": [
+        "InvoiceId",
+        "InvoiceNumber",
+        "VendorName",
+        "InvoiceDate",
+        "DueDate",
+        "GrossAmount",
+        "TaxRate",
+        "Currency",
+        "Description",
+        "DeliveryNote",
+        "FilePath"
+      ]
+    }
+  ],
+  "vendors": [
+    {
+      "name": "Rinke",
+      "patterns": [
+        "Rinke Treuhand GmbH"
+      ],
+      "prompt": "",
+      "category": null,
+      "column_prompts": {
+        "DueDate": "Ist oft \"sofort fällig\", setze daher einfach das invoice date als due date."
+      }
+    },
+    {
+      "name": "Schnaufer",
+      "patterns": [],
+      "prompt": "",
+      "category": "Einkauf",
+      "column_prompts": {
+        "Description": "Only list products and Quantity like: \"Extra Years (100); \""
+      }
+    },
+    {
+      "name": "DHL Freight",
+      "patterns": [],
+      "prompt": "",
+      "category": "Logistik",
+      "column_prompts": {
+        "Description": "Use this formatting \"Recipient(Deliverynote/Weight\"). Example: \"JFC(71234/100KG)\". Repeat for each item and separate with a \",\". Example: \"JFC(72346/200KG), Heuschen & Schrouff(72356/320KG)\"",
+        "DeliveryNote": "Invoice might contain more than one DeliveryNote. The invoice Note has 5 digits often starting with \"7\". watch out for numbercomposites like \"72175/9295\". in those cases its the first 5 digits, like the \"72175\". Take every DeliveryNote you find and seprate them with a \",\""
+      }
+    }
+  ],
+  "llm": {
+    "provider": "google",
+    "base_url": "https://generativelanguage.googleapis.com/v1beta/openai",
+    "api_key": "",
+    "model": "gemini-2.5-flash"
+  }
+}
