@@ -14,10 +14,10 @@ if (Test-Path $configPath) {
 python -m PyInstaller `
   --noconfirm `
   --clean `
-  "InvoiceApp.spec"
+  "InvoiceApp.spec" #spec file is the configuration file for the PyInstaller
 
-$distDir = Join-Path $repoRoot "dist"
-$zipPath = Join-Path $distDir "InvoiceApp.zip"
+$distDir = Join-Path $repoRoot "dist" 
+$zipPath = Join-Path $distDir "InvoiceApp.zip" #Join
 if (-not (Test-Path $distDir)) {
   throw "dist-Verzeichnis fehlt nach dem Build."
 }
